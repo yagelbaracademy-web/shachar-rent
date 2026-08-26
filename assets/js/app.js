@@ -6,10 +6,10 @@
 const CARS = [
   {
     id: 'economy',
-    name: 'כלכלי · קבוצה A',
+    name: 'עירוני · קבוצה A',
     model: 'פולקסווגן UP! או דומה',
     category: 'economy',
-    categoryLabel: 'כלכלי',
+    categoryLabel: 'עירוני',
     img: 'assets/images/cars/car-economy.png',
     seats: 4, bags: 1, trans: 'ידני', ac: true,
     rating: 4.6,
@@ -155,15 +155,15 @@ function renderFleet(){
 
   els.fleetGrid.innerHTML = filtered.map(car => cardTemplate(car)).join('');
 
-  els.fleetGrid.querySelectorAll('[data-select-car]').forEach(btn => {
-    btn.addEventListener('click', () => openBookingModal(btn.getAttribute('data-select-car')));
+  els.fleetGrid.querySelectorAll('[data-select-car]').forEach(card => {
+    card.addEventListener('click', () => openBookingModal(card.getAttribute('data-select-car')));
   });
 }
 
 function cardTemplate(car){
   const price = car.price[state.period];
   return `
-  <article class="car-card">
+  <article class="car-card" data-select-car="${car.id}">
     <div class="car-media">
       ${car.badge ? `<span class="car-badge${car.category==='luxury' ? ' badge-dark':''}">${car.badge}</span>` : ''}
       <img src="${car.img}" alt="${car.name}, ${car.categoryLabel}" loading="lazy">
@@ -189,7 +189,7 @@ function cardTemplate(car){
           <span class="amount">₪${price.toLocaleString('he-IL')}</span>
           <span class="period"> ${periodLabel(state.period)}, כולל מע״מ</span>
         </div>
-        <button class="btn btn-primary" data-select-car="${car.id}">בחרו רכב</button>
+        <button class="btn btn-primary" type="button">בחרו רכב</button>
       </div>
     </div>
   </article>`;

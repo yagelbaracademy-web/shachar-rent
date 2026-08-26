@@ -122,12 +122,13 @@ input,select{ font-family:inherit; font-size:16px; }
 /* ---------- Hero ---------- */
 .hero{
   position:relative; padding:52px 0 180px;
-  background:
-    radial-gradient(1100px 480px at 85% -10%, #FDE7CA 0%, rgba(253,231,202,0) 60%),
-    linear-gradient(180deg, #FFFFFF 0%, #F6F7F8 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6F7F8 100%);
   overflow:hidden;
 }
 .hero-inner{ position:relative; z-index:2; max-width:760px; margin:0 auto; text-align:center; }
+.hero-logo{ display:flex; flex-direction:column; align-items:center; gap:10px; margin-bottom:30px; }
+.hero-logo-img{ height:clamp(84px, 12vw, 136px); width:auto; margin:0 auto; }
+.hero-logo-tagline{ font-size:15px; font-weight:700; letter-spacing:.06em; color:var(--text-soft); }
 .hero h1{
   font-size:clamp(30px, 5vw, 50px); font-weight:800; letter-spacing:-.02em; line-height:1.15;
   margin:0 0 16px;
@@ -327,6 +328,7 @@ input,select{ font-family:inherit; font-size:16px; }
 .car-card{
   background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
   overflow:hidden; display:flex; flex-direction:column; transition:box-shadow .2s, transform .2s;
+  cursor:pointer;
 }
 .car-card:hover{ box-shadow:var(--shadow-md); transform:translateY(-3px); }
 .car-media{
