@@ -127,7 +127,7 @@ input,select{ font-family:inherit; font-size:16px; }
 }
 .hero-inner{ position:relative; z-index:2; max-width:760px; margin:0 auto; text-align:center; }
 .hero-logo{ display:flex; justify-content:center; margin-bottom:26px; }
-.hero-logo-img{ height:44px; width:auto; margin:0 auto; }
+.hero-logo-img{ height:132px; width:auto; margin:0 auto; }
 .hero h1{
   font-size:clamp(30px, 5vw, 50px); font-weight:800; letter-spacing:-.02em; line-height:1.15;
   margin:0 0 16px;
